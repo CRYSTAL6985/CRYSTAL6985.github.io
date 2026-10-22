@@ -4,7 +4,7 @@ import path from "node:path";
 
 const ROOT = path.join(import.meta.dirname, "..");
 const PAGES = { en: "index.html", fa: "fa/index.html" };
-const LANG_LINK = { en: "fa/", fa: "../" };
+const LANG_LINK = { en: "fa/index.html", fa: "../index.html" };
 
 const problems = [];
 const sectionIds = {};
