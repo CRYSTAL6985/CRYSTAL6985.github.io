@@ -99,7 +99,7 @@
               <div><dt>علاقه‌مندی‌ها و ماشین‌حساب</dt><dd>قیمت‌هایی که دنبال می‌کنید بالای صفحه، و تبدیل هر مبلغ به تومان.</dd></div>
             </dl>
             <ul class="tags" aria-label="ساخته‌شده با">
-              <li dir="ltr">Node.js</li><li dir="ltr">SQLite</li><li dir="ltr">Capacitor</li><li dir="ltr">Kotlin</li><li dir="ltr">Web push</li>
+              <li dir="ltr">Node.js</li><li dir="ltr">SQLite</li><li dir="ltr">Capacitor</li><li dir="ltr">Kotlin</li><li dir="ltr">Web push</li><li>حالت روشن و تیره</li>
             </ul>
             <div class="btns">
               <span class="btn is-soon" aria-disabled="true">دانلود نسخهٔ اندروید به‌زودی</span>
@@ -107,8 +107,19 @@
             </div>
           </div>
           <div class="media phones">
-            <img class="phone-frame" src="../assets/img/rates-home-m.webp" width="780" height="1688" alt="صفحهٔ اصلی نرخ با قیمت طلای ۱۸ عیار، نمودار روز و فهرست قیمت ارزها" loading="lazy">
-            <img class="phone-frame" src="../assets/img/rates-sheet-m.webp" width="780" height="1688" alt="جزئیات دلار آمریکا در نرخ با نمودار، بیشترین و کمترین قیمت روز، ماشین‌حساب و دکمهٔ هشدار قیمت" loading="lazy">
+            <fieldset class="mode">
+              <legend>حالت نمایش تصویرها</legend>
+              <label><input type="radio" name="nerkh-mode" value="light" checked>روشن</label>
+              <label><input type="radio" name="nerkh-mode" value="dark">تیره</label>
+            </fieldset>
+            <div class="phone-frame duo">
+              <img src="../assets/img/rates-home-m.webp" width="780" height="1688" alt="صفحهٔ اصلی نرخ با قیمت طلای ۱۸ عیار، نمودار روز و فهرست قیمت ارزها" loading="lazy">
+              <img class="dark" src="../assets/img/rates-home-dark-m.webp" width="780" height="1688" alt="" loading="lazy">
+            </div>
+            <div class="phone-frame duo">
+              <img src="../assets/img/rates-sheet-m.webp" width="780" height="1688" alt="جزئیات دلار آمریکا در نرخ با نمودار، بیشترین و کمترین قیمت روز، ماشین‌حساب و دکمهٔ هشدار قیمت" loading="lazy">
+              <img class="dark" src="../assets/img/rates-sheet-dark-m.webp" width="780" height="1688" alt="" loading="lazy">
+            </div>
           </div>
         </article>
 

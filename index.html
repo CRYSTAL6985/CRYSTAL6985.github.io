@@ -99,7 +99,7 @@
               <div><dt>Favourites and converter</dt><dd>Pin the prices you watch and convert any amount to toman.</dd></div>
             </dl>
             <ul class="tags" aria-label="Built with">
-              <li>Node.js</li><li>SQLite</li><li>Capacitor</li><li>Kotlin</li><li>Web push</li>
+              <li>Node.js</li><li>SQLite</li><li>Capacitor</li><li>Kotlin</li><li>Web push</li><li>Light + dark mode</li>
             </ul>
             <div class="btns">
               <span class="btn is-soon" aria-disabled="true">Android download coming soon</span>
@@ -107,8 +107,19 @@
             </div>
           </div>
           <div class="media phones">
-            <img class="phone-frame" src="assets/img/rates-home-m.webp" width="780" height="1688" alt="Nerkh home screen with the 18 karat gold price, a day chart and a list of currency prices" loading="lazy">
-            <img class="phone-frame" src="assets/img/rates-sheet-m.webp" width="780" height="1688" alt="Nerkh detail sheet for the US dollar with a chart, the day's high and low, a converter and a price alert button" loading="lazy">
+            <fieldset class="mode">
+              <legend>Screenshot theme</legend>
+              <label><input type="radio" name="nerkh-mode" value="light" checked>Light</label>
+              <label><input type="radio" name="nerkh-mode" value="dark">Dark</label>
+            </fieldset>
+            <div class="phone-frame duo">
+              <img src="assets/img/rates-home-m.webp" width="780" height="1688" alt="Nerkh home screen with the 18 karat gold price, a day chart and a list of currency prices" loading="lazy">
+              <img class="dark" src="assets/img/rates-home-dark-m.webp" width="780" height="1688" alt="" loading="lazy">
+            </div>
+            <div class="phone-frame duo">
+              <img src="assets/img/rates-sheet-m.webp" width="780" height="1688" alt="Nerkh detail sheet for the US dollar with a chart, the day's high and low, a converter and a price alert button" loading="lazy">
+              <img class="dark" src="assets/img/rates-sheet-dark-m.webp" width="780" height="1688" alt="" loading="lazy">
+            </div>
           </div>
         </article>
 
