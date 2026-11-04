@@ -8,203 +8,274 @@
   <meta property="og:title" content="Ali Mahmoudi, web and app developer">
   <meta property="og:description" content="Online shops, websites and Android apps, in English and Persian.">
   <meta property="og:image" content="https://crystal6985.github.io/assets/img/abrisham-home-d.webp">
-  <meta name="theme-color" content="#FBFCFC" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0B1516" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0d1617">
   <link rel="alternate" hreflang="fa" href="https://crystal6985.github.io/fa/">
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/site.css">
+  <script>document.documentElement.classList.add("js");try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+  <script src="assets/site.js" defer onerror="document.documentElement.classList.remove('js')"></script>
 </head>
 <body>
   <a class="skip" href="#work">Skip to work</a>
+
   <header class="nav">
-    <nav class="wrap" aria-label="Main">
-      <a class="name" href="#top">Ali Mahmoudi</a>
-      <ul>
-        <li class="hide-sm"><a href="#work">Work</a></li>
-        <li class="hide-sm"><a href="#services">Services</a></li>
-        <li class="hide-sm"><a href="#process">Process</a></li>
+    <nav class="nav-bar glass" aria-label="Main">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true">AM</span><span class="name-full">Ali Mahmoudi</span></a>
+      <ul class="links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a class="lang" href="fa/index.html" hreflang="fa" lang="fa">فارسی</a></li>
+        <li class="pill" aria-hidden="true"></li>
       </ul>
+      <div class="tools-nav">
+        <button class="icon-btn theme-btn" type="button" aria-pressed="false" aria-label="Switch to light theme" data-to-light="Switch to light theme" data-to-dark="Switch to dark theme">
+          <svg class="i sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        </button>
+        <a class="icon-btn lang" href="fa/index.html" hreflang="fa" lang="fa">فارسی</a>
+        <button class="icon-btn menu-btn" type="button" popovertarget="menu" aria-label="Menu">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg>
+        </button>
+      </div>
     </nav>
+    <div class="menu glass" id="menu" popover>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </header>
 
   <main id="top">
-    <div class="wrap hero">
-      <div>
-        <p class="status">Available for new projects</p>
-        <h1>Online shops, websites and apps, <em>built to run a real business.</em></h1>
+    <div class="hero wrap">
+      <div class="hero-top">
+        <p class="avail glass"><span class="dot" aria-hidden="true"></span>Available for new projects</p>
+        <p class="role">Ali Mahmoudi<span aria-hidden="true">/</span>Web &amp; App Developer</p>
+      </div>
+      <h1 class="display"><span>Online shops, websites and apps,</span> <em>built to run a real business.</em></h1>
+      <div class="hero-foot">
         <p class="lead">I'm <strong>Ali Mahmoudi</strong>, a web and app developer. I design, build and launch online stores, business websites and Android apps, in English, Persian, or both.</p>
         <div class="btns">
-          <a class="btn btn-primary" href="#work">View selected work</a>
+          <a class="btn btn-primary" href="#work">View selected work<svg class="i arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn" href="#contact">Start a project</a>
         </div>
       </div>
-      <div class="shots">
-        <img class="desk" src="assets/img/abrisham-home-d.webp" width="1440" height="900" alt="The ABRISHAM boutique homepage on a laptop screen" fetchpriority="high">
-        <img class="phone-frame" src="assets/img/abrisham-home-m.webp" width="780" height="1688" alt="The same homepage on a phone">
-      </div>
     </div>
 
-    <div class="stack">
-      <div class="wrap">
-        <strong>Works with</strong>
-        <ul aria-label="Tools and platforms">
-          <li>Node.js</li><li>WordPress</li><li>WooCommerce</li><li>Android (Kotlin)</li><li>SQLite</li><li>Persian RTL + English</li>
-        </ul>
-      </div>
+    <div class="stage wrap">
+      <figure class="stage-frame">
+        <div class="browser">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">abrishambtq.ir</span></div>
+          <img src="assets/img/abrisham-home-d.webp" width="1440" height="900" alt="The ABRISHAM boutique homepage on a desktop screen" fetchpriority="high">
+        </div>
+        <img class="phone p1" src="assets/img/rates-home-dark-m.webp" width="780" height="1688" alt="The Nerkh market prices app on a phone">
+        <img class="phone p2" src="assets/img/rug-shop-m.webp" width="780" height="1498" alt="The Loom and Hearth rug catalogue on a phone">
+        <span class="chip glass c0" aria-hidden="true"><b></b>ABRISHAM</span>
+        <span class="chip glass c1" aria-hidden="true"><b></b>Nerkh</span>
+        <span class="chip glass c2" aria-hidden="true"><b></b>Loom &amp; Hearth</span>
+      </figure>
     </div>
 
-    <section id="work" aria-labelledby="work-title">
+    <section id="work" class="section" aria-labelledby="work-title">
       <div class="wrap">
-        <h2 id="work-title">Selected work</h2>
-        <p class="intro">An online store running on its own domain, a market prices app for Android and the web, and a full WooCommerce storefront.</p>
+        <header class="sec-head" data-reveal>
+          <h2 id="work-title">Selected <em>work</em></h2>
+          <p class="intro">An online store running on its own domain, a market prices app for Android and the web, and a full WooCommerce storefront.</p>
+        </header>
 
-        <article class="project" aria-labelledby="abrisham-title">
-          <div>
-            <ul class="meta" aria-label="Project details">
-              <li class="is-live">Live</li><li>Online store</li><li>Custom build</li>
-            </ul>
-            <h3 id="abrisham-title">ABRISHAM boutique</h3>
-            <p class="summary">A bilingual online store for a clothing boutique, designed, built and deployed from scratch. Customers browse and order; the owner runs the whole shop from a secure admin panel.</p>
-            <dl class="features">
-              <div><dt>Catalogue</dt><dd>Categories, filters, sizes and prices in toman.</dd></div>
-              <div><dt>Accounts and checkout</dt><dd>Customer sign-up, cart and order placement.</dd></div>
-              <div><dt>Admin panel</dt><dd>Products, photos, orders and messages, behind a password and an emailed sign-in code.</dd></div>
-              <div><dt>Automatic backups</dt><dd>Automatic database snapshots on a separate disk, downloadable from the dashboard.</dd></div>
-            </dl>
-            <ul class="tags" aria-label="Built with">
-              <li>Node.js</li><li>Express</li><li>SQLite</li><li>Persian + English</li>
-            </ul>
-            <div class="btns">
-              <a class="btn btn-primary" href="https://abrishambtq.ir">Visit abrishambtq.ir</a>
+        <div class="cases">
+          <article class="case case-a" aria-labelledby="abrisham-title">
+            <div class="shot" data-reveal>
+            <div class="panel zoom">
+              <div class="browser">
+                <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">abrishambtq.ir/shop</span></div>
+                <img src="assets/img/abrisham-shop-d.webp" width="1440" height="800" alt="The ABRISHAM shop page with clothing products and prices in toman" loading="lazy">
+              </div>
             </div>
-          </div>
-          <div class="media with-phone">
-            <img class="desk" src="assets/img/abrisham-shop-d.webp" width="1440" height="800" alt="The ABRISHAM shop page with clothing products and prices in toman" loading="lazy">
-            <img class="phone-frame" src="assets/img/abrisham-shop-m.webp" width="780" height="1688" alt="The ABRISHAM shop page on a phone, in Persian" loading="lazy">
-          </div>
-        </article>
+              <img class="phone" src="assets/img/abrisham-shop-m.webp" width="780" height="1688" alt="The ABRISHAM shop page on a phone, in Persian" loading="lazy">
+            </div>
+            <div class="body">
+              <div data-reveal>
+                <ul class="meta" aria-label="Project details">
+                  <li class="is-live">Live</li><li>Online store</li><li>Custom build</li>
+                </ul>
+                <h3 id="abrisham-title">ABRISHAM boutique</h3>
+                <p class="summary">A bilingual online store for a clothing boutique, designed, built and deployed from scratch. Customers browse and order; the owner runs the whole shop from a secure admin panel.</p>
+                <ul class="tags" aria-label="Built with">
+                  <li>Node.js</li><li>Express</li><li>SQLite</li><li>Persian + English</li>
+                </ul>
+                <div class="btns">
+                  <a class="btn btn-case" href="https://abrishambtq.ir">Visit abrishambtq.ir<svg class="i arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </div>
+              </div>
+              <dl class="features" data-reveal style="--d:.1s">
+                <div><dt>Catalogue</dt><dd>Categories, filters, sizes and prices in toman.</dd></div>
+                <div><dt>Accounts and checkout</dt><dd>Customer sign-up, cart and order placement.</dd></div>
+                <div><dt>Admin panel</dt><dd>Products, photos, orders and messages, behind a password and an emailed sign-in code.</dd></div>
+                <div><dt>Automatic backups</dt><dd>Automatic database snapshots on a separate disk, downloadable from the dashboard.</dd></div>
+              </dl>
+            </div>
+          </article>
 
-        <article class="project flip" aria-labelledby="nerkh-title">
-          <div>
-            <ul class="meta" aria-label="Project details">
-              <li>Android app</li><li>Web app</li><li>Source on GitHub</li>
-            </ul>
-            <h3 id="nerkh-title">Nerkh, live market prices</h3>
-            <p class="summary">A Persian app that tracks live toman prices for currencies, gold, coins, silver and crypto, with history charts, price alerts and native Android home-screen widgets.</p>
-            <dl class="features">
-              <div><dt>Live prices and charts</dt><dd>Day, week, month and year charts with the day's high and low.</dd></div>
-              <div><dt>Price alerts</dt><dd>A notification when a price crosses the level you set.</dd></div>
-              <div><dt>Home-screen widgets</dt><dd>Native Kotlin widgets that refresh in the background.</dd></div>
-              <div><dt>Favourites and converter</dt><dd>Pin the prices you watch and convert any amount to toman.</dd></div>
-            </dl>
-            <ul class="tags" aria-label="Built with">
-              <li>Node.js</li><li>SQLite</li><li>Capacitor</li><li>Kotlin</li><li>Web push</li><li>Light + dark mode</li>
-            </ul>
-            <div class="btns">
-              <span class="btn is-soon" aria-disabled="true">Android download coming soon</span>
-              <a class="btn" href="https://github.com/CRYSTAL6985/rates-app"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>Source code</a>
+          <article class="case case-b" aria-labelledby="nerkh-title">
+            <div class="panel phones" data-reveal>
+              <fieldset class="mode glass">
+                <legend>Screenshot theme</legend>
+                <span class="thumb" aria-hidden="true"></span>
+                <label><input type="radio" name="nerkh-mode" value="dark" checked>Dark</label>
+                <label><input type="radio" name="nerkh-mode" value="light">Light</label>
+              </fieldset>
+              <div class="phone duo">
+                <img src="assets/img/rates-home-dark-m.webp" width="780" height="1688" alt="Nerkh home screen with the 18 karat gold price, a day chart and a list of currency prices" loading="lazy">
+                <img class="light" src="assets/img/rates-home-m.webp" width="780" height="1688" alt="" loading="lazy">
+              </div>
+              <div class="phone duo">
+                <img src="assets/img/rates-sheet-dark-m.webp" width="780" height="1688" alt="Nerkh detail sheet for the US dollar with a chart, the day's high and low, a converter and a price alert button" loading="lazy">
+                <img class="light" src="assets/img/rates-sheet-m.webp" width="780" height="1688" alt="" loading="lazy">
+              </div>
             </div>
-          </div>
-          <div class="media phones">
-            <fieldset class="mode">
-              <legend>Screenshot theme</legend>
-              <label><input type="radio" name="nerkh-mode" value="light" checked>Light</label>
-              <label><input type="radio" name="nerkh-mode" value="dark">Dark</label>
-            </fieldset>
-            <div class="phone-frame duo">
-              <img src="assets/img/rates-home-m.webp" width="780" height="1688" alt="Nerkh home screen with the 18 karat gold price, a day chart and a list of currency prices" loading="lazy">
-              <img class="dark" src="assets/img/rates-home-dark-m.webp" width="780" height="1688" alt="" loading="lazy">
+            <div data-reveal style="--d:.1s">
+              <ul class="meta" aria-label="Project details">
+                <li>Android app</li><li>Web app</li><li>Source on GitHub</li>
+              </ul>
+              <h3 id="nerkh-title">Nerkh, live market prices</h3>
+              <p class="summary">A Persian app that tracks live toman prices for currencies, gold, coins, silver and crypto, with history charts, price alerts and native Android home-screen widgets.</p>
+              <dl class="features">
+                <div><dt>Live prices and charts</dt><dd>Day, week, month and year charts with the day's high and low.</dd></div>
+                <div><dt>Price alerts</dt><dd>A notification when a price crosses the level you set.</dd></div>
+                <div><dt>Home-screen widgets</dt><dd>Native Kotlin widgets that refresh in the background.</dd></div>
+                <div><dt>Favourites and converter</dt><dd>Pin the prices you watch and convert any amount to toman.</dd></div>
+              </dl>
+              <ul class="tags" aria-label="Built with" style="margin-top:28px">
+                <li>Node.js</li><li>SQLite</li><li>Capacitor</li><li>Kotlin</li><li>Web push</li><li>Light + dark mode</li>
+              </ul>
+              <div class="btns">
+                <span class="btn is-soon" aria-disabled="true">Android download coming soon</span>
+                <a class="btn" href="https://github.com/CRYSTAL6985/rates-app"><svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>Source code</a>
+              </div>
             </div>
-            <div class="phone-frame duo">
-              <img src="assets/img/rates-sheet-m.webp" width="780" height="1688" alt="Nerkh detail sheet for the US dollar with a chart, the day's high and low, a converter and a price alert button" loading="lazy">
-              <img class="dark" src="assets/img/rates-sheet-dark-m.webp" width="780" height="1688" alt="" loading="lazy">
-            </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="project" aria-labelledby="rugs-title">
-          <div>
-            <ul class="meta" aria-label="Project details">
-              <li>Demo store</li><li>WordPress</li><li>WooCommerce</li>
-            </ul>
-            <h3 id="rugs-title">Loom &amp; Hearth rug store</h3>
-            <p class="summary">A complete rug store on WordPress and WooCommerce with a custom block theme, built so the owner can manage products, pages and orders without touching code.</p>
-            <dl class="features">
+          <article class="case case-c" aria-labelledby="rugs-title">
+            <div class="shot zoom" data-reveal>
+              <div class="frame"><img src="assets/img/rug-home-d.webp" width="1440" height="900" alt="The Loom and Hearth homepage with large room photos and rug categories" loading="lazy"></div>
+              <img class="phone" src="assets/img/rug-shop-m.webp" width="780" height="1498" alt="The Loom and Hearth rug catalogue on a phone" loading="lazy">
+            </div>
+            <div class="card glass" data-reveal style="--d:.15s">
+              <ul class="meta" aria-label="Project details">
+                <li>Demo store</li><li>WordPress</li><li>WooCommerce</li>
+              </ul>
+              <h3 id="rugs-title">Loom &amp; Hearth rug store</h3>
+              <p class="summary">A complete rug store on WordPress and WooCommerce with a custom block theme, built so the owner can manage products, pages and orders without touching code.</p>
+              <ul class="tags" aria-label="Built with">
+                <li>WordPress</li><li>WooCommerce</li><li>Block theme</li><li>PHP</li>
+              </ul>
+            </div>
+            <dl class="features" data-reveal>
               <div><dt>Shop and filters</dt><dd>Room, style, colour and size filters with a sortable product grid.</dd></div>
               <div><dt>Product variations</dt><dd>Every rug in several sizes, each with its own price.</dd></div>
               <div><dt>Basket and checkout</dt><dd>WooCommerce cart and checkout, styled to match the theme.</dd></div>
               <div><dt>Two languages</dt><dd>An English and Persian switch, with a right-to-left layout.</dd></div>
             </dl>
-            <ul class="tags" aria-label="Built with">
-              <li>WordPress</li><li>WooCommerce</li><li>Block theme</li><li>PHP</li>
-            </ul>
-          </div>
-          <div class="media with-phone">
-            <img class="desk" src="assets/img/rug-home-d.webp" width="1440" height="900" alt="The Loom and Hearth homepage with large room photos and rug categories" loading="lazy">
-            <img class="phone-frame" src="assets/img/rug-shop-m.webp" width="780" height="1498" alt="The Loom and Hearth rug catalogue on a phone" loading="lazy">
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="services" aria-labelledby="services-title">
+    <section id="services" class="section" aria-labelledby="services-title">
       <div class="wrap">
-        <h2 id="services-title">What I build</h2>
-        <p class="intro">Every project works on phones first and can run in English, Persian, or both.</p>
-        <ul class="offers">
-          <li>
+        <header class="sec-head" data-reveal>
+          <h2 id="services-title">What I <em>build</em></h2>
+          <p class="intro">Every project works on phones first and can run in English, Persian, or both.</p>
+        </header>
+        <ul class="services">
+          <li class="s1" data-reveal>
+            <span class="svc-ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M5.5 8h13l-1 12h-11l-1-12Z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></span>
             <h3>Online stores</h3>
             <p>A shop with products, sizes, a cart, orders and an admin panel. Custom-built in Node.js for speed and full control, or on WooCommerce for a lower budget.</p>
-            <span class="fit">Shops, boutiques, brands</span>
+            <p class="fit">Shops, boutiques, brands</p>
           </li>
-          <li>
+          <li class="s2" data-reveal style="--d:.08s">
+            <span class="svc-ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></span>
             <h3>Business websites</h3>
             <p>A fast, clear site on WordPress that you can update yourself: services, gallery, contact form, and a blog if you want one.</p>
-            <span class="fit">Services, clinics, studios</span>
+            <p class="fit">Services, clinics, studios</p>
           </li>
-          <li>
-            <h3>Web and Android apps</h3>
-            <p>Tools that live on the phone: installable web apps, native Android widgets and push notifications.</p>
-            <span class="fit">Data, tools, dashboards</span>
+          <li class="s3" data-reveal>
+            <span class="svc-ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="m7.5 14.5 3.5-4 3 2.5 5-6"/></svg></span>
+            <h3>Web apps</h3>
+            <p>Installable web apps and dashboards that work like an app on the phone: live data, charts and push notifications.</p>
+            <p class="fit">Data, tools, dashboards</p>
+          </li>
+          <li class="s4" data-reveal style="--d:.08s">
+            <span class="svc-ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span>
+            <h3>Android apps</h3>
+            <p>An Android app built on your web app, with native home-screen widgets and notifications where they help.</p>
+            <p class="fit">Apps, widgets, alerts</p>
           </li>
         </ul>
-        <p class="note"><strong>Not sure which you need?</strong> Tell me about your business and I'll recommend the right approach and budget.</p>
+        <p class="note" data-reveal><strong>Not sure which you need?</strong> Tell me about your business and I'll recommend the right approach and budget.</p>
       </div>
     </section>
 
-    <section id="process" aria-labelledby="process-title">
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="wrap about">
+        <header class="sec-head" data-reveal>
+          <h2 id="about-title">The tools I <em>ship with</em></h2>
+          <p class="intro">I handle the whole build: the interface, the server, the database and the launch. Every tool below is used in a project on this page.</p>
+        </header>
+        <dl class="stackrows" data-reveal style="--d:.1s">
+          <div><dt>Interface</dt><dd class="t">HTML, CSS, JavaScript</dd><dd class="used">All three projects</dd></div>
+          <div><dt>Server</dt><dd class="t">Node.js</dd><dd class="used">ABRISHAM, Nerkh</dd></div>
+          <div><dt>Framework</dt><dd class="t">Express</dd><dd class="used">ABRISHAM</dd></div>
+          <div><dt>Data</dt><dd class="t">SQLite</dd><dd class="used">ABRISHAM, Nerkh</dd></div>
+          <div><dt>CMS</dt><dd class="t">WordPress, WooCommerce</dd><dd class="used">Loom &amp; Hearth</dd></div>
+          <div><dt>Android</dt><dd class="t">Capacitor, Kotlin</dd><dd class="used">Nerkh</dd></div>
+          <div><dt>Languages</dt><dd class="t">Persian RTL and English</dd><dd class="used">All three projects</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="process" class="section" aria-labelledby="process-title">
       <div class="wrap">
-        <h2 id="process-title">How a project runs</h2>
-        <p class="intro">Clear steps, so you always know what happens next.</p>
-        <ol class="steps">
-          <li><h3>Brief and plan</h3><p>You tell me what the site has to do. I reply with a plan, a timeline and a price.</p></li>
-          <li><h3>Design and build</h3><p>I design and build it, and share progress with you as each part takes shape.</p></li>
-          <li><h3>Launch</h3><p>I put it live on your domain with hosting, HTTPS and backups, then hand it over.</p></li>
+        <header class="sec-head" data-reveal>
+          <h2 id="process-title">How a project <em>runs</em></h2>
+          <p class="intro">Clear steps, so you always know what happens next.</p>
+        </header>
+        <ol class="timeline">
+          <li data-reveal><span class="step-no" aria-hidden="true">01</span><h3>Brief and plan</h3><p>You tell me what the site has to do. I reply with a plan, a timeline and a price.</p></li>
+          <li data-reveal style="--d:.12s"><span class="step-no" aria-hidden="true">02</span><h3>Design and build</h3><p>I design and build it, and share progress with you as each part takes shape.</p></li>
+          <li data-reveal style="--d:.24s"><span class="step-no" aria-hidden="true">03</span><h3>Launch</h3><p>I put it live on your domain with hosting, HTTPS and backups, then hand it over.</p></li>
         </ol>
-        <p class="note">I use AI-assisted development tools, which keeps timelines short.</p>
+        <p class="note" data-reveal>I use AI-assisted development tools, which keeps timelines short.</p>
       </div>
     </section>
 
     <section id="contact" class="contact" aria-labelledby="contact-title">
-      <div class="wrap">
-        <div class="panel">
-          <div>
-            <h2 id="contact-title">Have a project in mind?</h2>
-            <p>Send a short description of what you need. I'll reply with how I'd build it and what it would cost.</p>
-          </div>
-          <div class="btns">
-            <a class="btn btn-primary" href="https://t.me/CRYSTAL69855"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Message me on Telegram</a>
-            <a class="btn" href="https://github.com/CRYSTAL6985"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
-          </div>
+      <div class="wrap" data-reveal>
+        <h2 id="contact-title">Have a project <em>in mind?</em></h2>
+        <p>Send a short description of what you need. I'll reply with how I'd build it and what it would cost.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="https://t.me/CRYSTAL69855"><svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Message me on Telegram</a>
+          <a class="btn glass" href="https://github.com/CRYSTAL6985"><svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap"><span>© 2026 Ali Mahmoudi</span><span>Online stores · Websites · Apps</span></div>
+  <footer class="foot">
+    <div class="wrap">
+      <span>© 2026 Ali Mahmoudi</span>
+      <span>Online stores · Websites · Apps</span>
+      <nav aria-label="Footer"><a class="u" href="fa/index.html" hreflang="fa" lang="fa">فارسی</a><a class="u" href="#top">Back to top</a></nav>
+    </div>
   </footer>
 </body>
 </html>
