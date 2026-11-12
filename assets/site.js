@@ -56,6 +56,11 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: "-45% 0px -50% 0px" });
 sections.forEach((s) => sectionObserver.observe(s));
 addEventListener("resize", () => setCurrent(current));
+// pill follows the mouse along the links, then goes back to the current section
+if (finePointer.matches) {
+  list.addEventListener("pointerover", (e) => { const a = e.target.closest("a"); if (a) movePill(a); });
+  list.addEventListener("pointerleave", () => setCurrent(current));
+}
 
 // close the mobile menu when a link is tapped
 const menu = document.getElementById("menu");

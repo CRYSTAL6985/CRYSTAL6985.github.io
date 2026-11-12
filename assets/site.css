@@ -166,6 +166,7 @@ html[dir="rtl"] .mark { font: 700 18px/1 "Vazirmatn", sans-serif; }
   box-shadow: inset 0 1px 0 color-mix(in oklch, var(--glass-hi) 60%, transparent);
   transition: translate .25s var(--ease-out), width .25s var(--ease-out), opacity .2s ease;
 }
+.pill::after { content: ""; position: absolute; inset-inline: 38%; bottom: 3px; height: 2px; border-radius: 2px; background: var(--accent); }
 .tools-nav { display: flex; align-items: center; gap: 4px; margin-inline-start: auto; }
 .links + .tools-nav { margin-inline-start: 0; }
 .icon-btn {
@@ -180,6 +181,9 @@ html[dir="rtl"] .mark { font: 700 18px/1 "Vazirmatn", sans-serif; }
 :root[data-theme="light"] .theme-btn .moon { display: block; }
 html:not(.js) .theme-btn { display: none; }
 .menu-btn { display: none; }
+.menu-btn path { transform-box: fill-box; transform-origin: center; transition: transform .25s var(--ease-out); }
+:root:has(#menu:popover-open) .menu-btn .l1 { transform: translateY(3px) rotate(45deg); }
+:root:has(#menu:popover-open) .menu-btn .l2 { transform: translateY(-3px) rotate(-45deg); }
 
 /* mobile menu (popover, works without js) */
 .menu {
@@ -210,6 +214,9 @@ html[dir="rtl"] .avail { padding: 9px 14px 9px 18px; }
 html[dir="rtl"] .role { font: 500 15px/1.6 "Vazirmatn", sans-serif; letter-spacing: 0; }
 .display { margin: 0; font-weight: 800; font-size: clamp(42px, 7.4vw, 112px); line-height: .98; letter-spacing: -.045em; }
 .display > span, .display > em { display: block; }
+.display > em { position: relative; width: fit-content; }
+.display em::after { content: ""; position: absolute; inset-inline: .04em; bottom: .02em; height: .055em; border-radius: 1em; background: color-mix(in oklch, var(--accent) 55%, transparent); transform-origin: left; }
+html[dir="rtl"] .display em::after { transform-origin: right; bottom: -.08em; }
 .display em, h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 1.07em; letter-spacing: -.02em; color: var(--accent); }
 html[dir="rtl"] .display { font-size: clamp(36px, 5.8vw, 86px); line-height: 1.32; letter-spacing: 0; }
 html[dir="rtl"] .display em, html[dir="rtl"] h2 em { font-family: "Vazirmatn", sans-serif; font-style: normal; font-weight: 400; font-size: 1em; letter-spacing: 0; }
@@ -239,6 +246,8 @@ html[dir="rtl"] .stage .c0 { translate: 50% 0; }
 /* sections */
 .section { padding-block: clamp(96px, 12vw, 176px); }
 .sec-head { display: grid; gap: 22px; margin-bottom: clamp(52px, 7vw, 104px); max-width: 860px; }
+.sec-head::before { content: ""; height: 2px; margin-bottom: 10px; transform-origin: left; background: linear-gradient(var(--accent), var(--accent)) left center / 56px 2px no-repeat, linear-gradient(var(--line-2), var(--line-2)) center / 100% 1px no-repeat; }
+html[dir="rtl"] .sec-head::before { transform-origin: right; background-position: right center, center; }
 h2 { margin: 0; font-weight: 800; font-size: clamp(38px, 5.6vw, 84px); line-height: 1; letter-spacing: -.042em; }
 html[dir="rtl"] h2 { font-size: clamp(32px, 4.6vw, 64px); line-height: 1.35; letter-spacing: 0; }
 .intro { margin: 0; max-width: 58ch; font-size: clamp(17px, 1.4vw, 19.5px); color: var(--muted); }
@@ -275,6 +284,12 @@ html[dir="rtl"] .tags li { font-family: "Vazirmatn", var(--font-mono); }
 }
 .zoom img { transition: scale .4s var(--ease-out); }
 @media (hover: hover) { .case:hover .zoom img { scale: 1.02; } }
+/* screenshots lift a bit on hover */
+.case-a .browser, .case-c .frame, .case-b .phone { transition: transform .3s var(--ease-out), box-shadow .3s ease; }
+.case-b .phone + .phone { transition-delay: .04s; }
+@media (hover: hover) {
+  .case-a .panel:hover .browser, .case-c .frame:hover, .case-b .phones:hover .phone { transform: translateY(-6px); }
+}
 
 /* abrisham */
 .case-a .panel { padding: clamp(28px, 6vw, 88px) clamp(20px, 8vw, 128px) 0; }
@@ -390,18 +405,54 @@ html[dir="rtl"] .contact h2 { font-size: clamp(38px, 7vw, 104px); line-height: 1
 
 /* animations, skipped if reduced motion is on */
 @media (prefers-reduced-motion: no-preference) {
-  .hero-top, .display > *, .hero-foot { animation: rise .6s var(--ease-out) both; }
-  .display > :nth-child(1) { animation-delay: .05s; }
-  .display > :nth-child(2) { animation-delay: .1s; }
-  .hero-foot { animation-delay: .15s; }
-  .stage-frame { animation: rise .7s var(--ease-out) .2s both; }
-  @keyframes rise { from { opacity: 0; translate: 0 16px; } }
+  /* hero: lines slide up from behind a mask, then the accent line gets underlined */
+  .hero-top { animation: rise .6s var(--ease-out) both; }
+  .display > * { animation: line-up .8s var(--ease-out) backwards; }
+  .display > :nth-child(2) { animation-delay: .12s; }
+  .display em::after { transform: scaleX(0); animation: draw .9s var(--ease-out) .75s forwards; }
+  .hero-foot { animation: rise .6s var(--ease-out) .35s both; }
+  .stage-frame { animation: rise .8s var(--ease-out) .5s both; }
+  @keyframes rise { from { opacity: 0; translate: 0 24px; } }
+  /* clip edges reach past the box so descenders aren't cut off while it plays */
+  @keyframes line-up {
+    from { clip-path: inset(0 -10% 100% -10%); translate: 0 .4em; }
+    to { clip-path: inset(-30% -10% -30% -10%); translate: 0 0; }
+  }
+  @keyframes draw { to { transform: scaleX(1); } }
   /* pulse a few times then stop, a looping dot gets annoying */
   .dot::after { animation: ping 2.6s ease-out 3; }
   @keyframes ping { 0% { opacity: .55; scale: 1; } 70%, 100% { opacity: 0; scale: 3; } }
 
-  .js [data-reveal] { opacity: 0; translate: 0 16px; transition: opacity .5s var(--ease-out), translate .5s var(--ease-out); transition-delay: var(--d, 0s); }
+  /* phones in the hero float a little (desktop only, keeps cheap phones smooth) */
+  @media (min-width: 900px) {
+    .stage .p1 { animation: float 7s ease-in-out 1.4s infinite alternate; }
+    .stage .p2 { animation: float 9s ease-in-out 1.8s infinite alternate-reverse; }
+    @keyframes float { to { transform: translateY(-12px); } }
+    /* and drift at different speeds on scroll for some depth */
+    @supports (animation-timeline: scroll()) {
+      .stage .p1 { animation: float 7s ease-in-out 1.4s infinite alternate, drift-a linear both; animation-timeline: auto, scroll(root); animation-range: normal, 0 100vh; }
+      .stage .p2 { animation: float 9s ease-in-out 1.8s infinite alternate-reverse, drift-b linear both; animation-timeline: auto, scroll(root); animation-range: normal, 0 100vh; }
+      @keyframes drift-a { to { translate: 0 -40px; } }
+      @keyframes drift-b { to { translate: 0 -80px; } }
+    }
+  }
+
+  .js [data-reveal] { opacity: 0; translate: 0 28px; transition: opacity .6s var(--ease-out), translate .6s var(--ease-out); transition-delay: var(--d, 0s); }
   .js [data-reveal].in { opacity: 1; translate: 0 0; }
+  /* section headings: the rule draws across when the heading comes in */
+  .js .sec-head::before { transform: scaleX(0); transition: transform 1s var(--ease-out) .15s; }
+  .js .sec-head.in::before { transform: scaleX(1); }
+
+  /* theme icon spins in when it swaps */
+  .theme-btn svg { animation: icon-in .4s var(--ease-out); }
+  @keyframes icon-in { from { opacity: 0; transform: rotate(-90deg) scale(.6); } }
+
+  /* fade between the english and persian pages */
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root) { animation: .18s ease both page-out; }
+  ::view-transition-new(root) { animation: .4s var(--ease-out) both page-in; }
+  @keyframes page-out { to { opacity: 0; } }
+  @keyframes page-in { from { opacity: 0; translate: 0 14px; } }
 
   @supports (animation-timeline: view()) {
     .timeline::after { animation: fill-line linear both; animation-timeline: view(); animation-range: entry 40% cover 45%; }
