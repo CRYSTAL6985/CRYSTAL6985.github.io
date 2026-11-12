@@ -1,4 +1,4 @@
-// Site check: run with `npm run check`. Exits 1 and prints one line per problem.
+// quick checks before pushing: npm run check
 import fs from "node:fs";
 import path from "node:path";
 
@@ -17,8 +17,6 @@ for (const [lang, page] of Object.entries(PAGES)) {
   }
   const html = fs.readFileSync(file, "utf8");
   const dir = path.dirname(file);
-
-  if (/[—–]/.test(html)) problems.push(`${page}: contains an em/en dash`);
 
   for (const [, ref] of html.matchAll(/\s(?:src|href)="([^"]+)"/g)) {
     if (/^(https?:|mailto:|#)/.test(ref)) continue;

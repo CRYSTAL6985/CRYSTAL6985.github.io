@@ -1,9 +1,9 @@
-// Progressive enhancement only: the page reads and works without this file.
+// all of this is extra, the page still works with js turned off
 const root = document.documentElement;
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
 const finePointer = matchMedia("(hover: hover) and (pointer: fine)");
 
-/* Theme: dark by default, light on request, remembered per visitor */
+// theme toggle, dark is default, choice is saved
 const themeBtn = document.querySelector(".theme-btn");
 const themeMeta = document.querySelector('meta[name="theme-color"]');
 function applyTheme(theme) {
@@ -18,16 +18,16 @@ applyTheme(root.dataset.theme);
 themeBtn?.addEventListener("click", () => {
   const next = root.dataset.theme === "light" ? "dark" : "light";
   applyTheme(next);
-  try { localStorage.setItem("theme", next); } catch { /* private mode: the choice lasts for this page only */ }
+  try { localStorage.setItem("theme", next); } catch { /* localStorage blocked (private mode), ignore */ }
 });
 
-/* Nav: denser glass once the page has moved under it */
+// nav gets more solid after scrolling a bit
 const nav = document.querySelector(".nav");
 const onScroll = () => nav.classList.toggle("is-scrolled", scrollY > 8);
 addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
-/* Active section: a pill slides to the link for the section in view */
+// highlight the nav link for whatever section is on screen
 const links = [...document.querySelectorAll(".links a, .menu a")];
 const list = document.querySelector(".links");
 const pill = document.querySelector(".pill");
@@ -57,11 +57,11 @@ const sectionObserver = new IntersectionObserver((entries) => {
 sections.forEach((s) => sectionObserver.observe(s));
 addEventListener("resize", () => setCurrent(current));
 
-/* Mobile menu: close after choosing a section */
+// close the mobile menu when a link is tapped
 const menu = document.getElementById("menu");
 menu?.addEventListener("click", (e) => { if (e.target.closest("a")) menu.hidePopover?.(); });
 
-/* Reveal on scroll, once */
+// fade things in on scroll
 const revealObserver = new IntersectionObserver((entries) => {
   for (const e of entries) {
     if (!e.isIntersecting) continue;
@@ -71,7 +71,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: "0px 0px -8% 0px" });
 document.querySelectorAll("[data-reveal]").forEach((el) => revealObserver.observe(el));
 
-/* Pointer light: glass speculars and service cells follow the pointer */
+// shine that follows the mouse on glass + service cards
 if (finePointer.matches) {
   let frame = 0;
   addEventListener("pointermove", (e) => {
@@ -86,8 +86,8 @@ if (finePointer.matches) {
   }, { passive: true });
 }
 
-/* Liquid glass lens: Chromium on desktop can bend the backdrop through an SVG displacement map.
-   shortcut: maps are rebuilt on resize only, not on every layout change; fine for this static page. */
+// glass refraction, only chrome/edge desktop support an svg filter inside backdrop-filter
+// (maps only update on resize, good enough for this page)
 if ("userAgentData" in navigator && finePointer.matches && !reduceMotion.matches
     && !matchMedia("(prefers-reduced-transparency: reduce)").matches) {
   const NS = "http://www.w3.org/2000/svg";
@@ -97,7 +97,7 @@ if ("userAgentData" in navigator && finePointer.matches && !reduceMotion.matches
   defs.style.position = "absolute";
   document.body.append(defs);
 
-  // Red ramps across x and green across y, flat grey in the middle: content bends only near the rim.
+  // red = x shift, green = y shift, the grey middle doesn't move so only the edges bend
   function lensMap(w, h) {
     const rx = Math.min(h / 2, w / 2, 40) / w, ry = Math.min(h / 2, 40) / h;
     const svg = `<svg xmlns="${NS}" width="${w}" height="${h}"><defs>`
